@@ -520,78 +520,86 @@
     const sampleData = [
   {
     "id": "1",
-    "domainName": "Period Sales Performance",
+    "domainName": "Sales Domain - Overall",
     "owner": "Sales Domain Lead",
     "status": "Green",
     "lastUpdated": "2026-04-22",
-    "risk": "Weekly sales momentum is strong and more than half of the period goal was achieved this week",
-    "mitigation": "Maintain current selling cadence and focus leadership attention on end-of-period closures"
+    "risk": "Strong momentum across sales and pipeline with positive FY26 outlook. Main focus is ensuring timely conversion of late-stage opportunities to close remaining period gap.",
+    "mitigation": "Maintain strong close-management cadence and leadership focus on top deals."
   },
   {
     "id": "2",
-    "domainName": "Period Goal Attainment",
-    "owner": "Sales Operations Lead",
-    "status": "Yellow",
+    "domainName": "Pricing & Sales Strategy",
+    "owner": "Pricing & Sales Strategy Lead",
+    "status": "Green",
     "lastUpdated": "2026-04-22",
-    "risk": "Overall sales remain behind the full period goal despite strong weekly performance",
-    "mitigation": "Intensify close plans for in-flight deals and review weekly conversion actions with account teams"
+    "risk": "Strong demand and continued wins, with some delays in client decision cycles.",
+    "mitigation": "Accelerate high-probability deals and continue AI-led positioning."
   },
   {
     "id": "3",
-    "domainName": "VC Deals Closing This Period",
-    "owner": "VC Sales Lead",
-    "status": "Green",
+    "domainName": "Sales Transformation",
+    "owner": "Sales Transformation Lead",
+    "status": "Red",
     "lastUpdated": "2026-04-22",
-    "risk": "More than $29M in VC deals are expected to close this period, but timing remains critical",
-    "mitigation": "Run daily checkpoint reviews on late-stage VC deals and remove approval bottlenecks quickly"
+    "risk": "Performance significantly below YTD goal with ~15% YoY decline and gap to target despite strong pipeline.",
+    "mitigation": "Accelerate conversion of late-stage deals and increase leadership oversight on key pursuits."
   },
   {
     "id": "4",
-    "domainName": "FY26 Q&B Pipeline",
-    "owner": "Pipeline Management Lead",
-    "status": "Green",
+    "domainName": "Customer Operations / Operate",
+    "owner": "Customer Operations Lead",
+    "status": "Yellow",
     "lastUpdated": "2026-04-22",
-    "risk": "None material; pipeline increased by more than $150M versus last week",
-    "mitigation": "Sustain pipeline generation momentum and validate top opportunities for forecast quality"
+    "risk": "Operate slightly below target with some softening in expected opportunities.",
+    "mitigation": "Focus on large deals and improve near-term opportunity pipeline."
   },
   {
     "id": "5",
-    "domainName": "FY26 VC Pipeline",
-    "owner": "VC Growth Lead",
+    "domainName": "Q&B Pipeline",
+    "owner": "Pipeline Management Lead",
     "status": "Green",
     "lastUpdated": "2026-04-22",
-    "risk": "FY26 VC amount is growing strongly, though deal quality and timing should continue to be validated",
-    "mitigation": "Prioritize high-probability opportunities and tighten weekly pipeline hygiene reviews"
+    "risk": "Strong pipeline (~$302M+) supporting near-term growth.",
+    "mitigation": "Maintain pipeline quality and executive sponsorship."
   },
   {
     "id": "6",
-    "domainName": "Forecast Projection",
-    "owner": "Finance Business Partner",
+    "domainName": "Verbal Commit Pipeline",
+    "owner": "Sales Operations Lead",
     "status": "Green",
     "lastUpdated": "2026-04-22",
-    "risk": "FY26 projection is ahead of plan and FY25, but forecast confidence depends on converting expected closes",
-    "mitigation": "Track forecast-to-close variance weekly and escalate slippage risks early"
+    "risk": "Healthy verbal commit (~$99M) with some timing dependencies.",
+    "mitigation": "Drive structured close tracking and remove blockers early."
   },
   {
     "id": "7",
-    "domainName": "Deal Conversion / Close Management",
-    "owner": "Regional Sales Managers",
-    "status": "Yellow",
+    "domainName": "Overdue Deals",
+    "owner": "Deal Governance Lead",
+    "status": "Red",
     "lastUpdated": "2026-04-22",
-    "risk": "Strong pipeline must convert into actual closes to fully recover the period gap",
-    "mitigation": "Focus on top late-stage deals, executive sponsorship, and faster decision turnaround"
+    "risk": "High overdue exposure (~$59M, 71 deals) impacting forecast confidence.",
+    "mitigation": "Execute overdue cleanup and enforce deal accountability."
   },
   {
     "id": "8",
-    "domainName": "Pipeline Quality and Governance",
-    "owner": "Sales Excellence Lead",
+    "domainName": "Growth Platforms",
+    "owner": "Growth Platforms Lead",
     "status": "Yellow",
     "lastUpdated": "2026-04-22",
-    "risk": "Rapid pipeline growth may mask weaker-quality opportunities if not reviewed consistently",
-    "mitigation": "Perform pipeline scrub on top deals and reinforce qualification standards across teams"
+    "risk": "Mixed performance across platforms with some below target.",
+    "mitigation": "Double down on strong platforms and recover weaker areas."
+  },
+  {
+    "id": "9",
+    "domainName": "AIO Mix",
+    "owner": "Offering Portfolio Lead",
+    "status": "Green",
+    "lastUpdated": "2026-04-22",
+    "risk": "AIO mix stable and improving visibility.",
+    "mitigation": "Continue enforcement and use for strategic planning."
   }
 ];
-
     function loadDomains() {
       try {
         return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
