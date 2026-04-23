@@ -348,6 +348,38 @@
       background: var(--panel-soft);
     }
 
+    .summary-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .summary-metric {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: white;
+      padding: 12px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .summary-metric.positive {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .summary-metric.negative {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .summary-metric.neutral {
+      background: var(--yellow-soft);
+      color: #a16207;
+    }
+
     .small { color: var(--muted); font-size: 12px; }
     .hidden { display: none; }
 
@@ -358,7 +390,7 @@
       .kpis {
         grid-template-columns: repeat(2, 1fr);
       }
-      .toolbar, .form-grid, .summary-strip, .heatmap {
+      .toolbar, .form-grid, .summary-strip, .heatmap, .summary-metrics {
         grid-template-columns: 1fr;
       }
     }
@@ -405,6 +437,12 @@
           </div>
         </div>
         <div class="exec-note" id="portfolioNarrative">Add domains to generate a portfolio-level narrative.</div>
+        <div class="summary-metrics">
+          <div class="summary-metric negative" id="overdueMetric">Overdue Deals: +0%</div>
+          <div class="summary-metric positive" id="pipelineMetric">Q&amp;B Pipeline: +0%</div>
+          <div class="summary-metric neutral" id="verbalMetric">Verbal Commit: +0%</div>
+          <div class="summary-metric neutral" id="attainmentMetric">YTD Attainment: 0%</div>
+        </div>
       </div>
 
       <div class="panel">
@@ -544,7 +582,11 @@
       greenHeat: document.getElementById('greenHeat'),
       yellowHeat: document.getElementById('yellowHeat'),
       redHeat: document.getElementById('redHeat'),
-      portfolioNarrative: document.getElementById('portfolioNarrative')
+      portfolioNarrative: document.getElementById('portfolioNarrative'),
+      overdueMetric: document.getElementById('overdueMetric'),
+      pipelineMetric: document.getElementById('pipelineMetric'),
+      verbalMetric: document.getElementById('verbalMetric'),
+      attainmentMetric: document.getElementById('attainmentMetric')
     };
 
     const sampleData = [
@@ -727,12 +769,21 @@
 
       if (!domains.length) {
         els.portfolioNarrative.textContent = 'Add domains to generate a portfolio-level narrative.';
+        els.overdueMetric.textContent = 'Overdue Deals: +0%';
+        els.pipelineMetric.textContent = 'Q&B Pipeline: +0%';
+        els.verbalMetric.textContent = 'Verbal Commit: +0%';
+        els.attainmentMetric.textContent = 'YTD Attainment: 0%';
         return;
       }
 
       const total = domains.length;
       const narrative = `${greenDomains.length} of ${total} domain(s) are green, ${yellowDomains.length} are yellow, and ${redDomains.length} are red. Focus executive attention on red domains first, stabilize yellow domains through targeted mitigation, and preserve momentum in green domains.`;
       els.portfolioNarrative.textContent = narrative;
+
+      els.overdueMetric.textContent = 'Overdue Deals: +8%';
+      els.pipelineMetric.textContent = 'Q&B Pipeline: +12%';
+      els.verbalMetric.textContent = 'Verbal Commit: -3%';
+      els.attainmentMetric.textContent = 'YTD Attainment: 84%';
     }
 
     function renderStats(domains) {
